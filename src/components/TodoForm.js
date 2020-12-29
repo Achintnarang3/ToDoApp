@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import '../App.css';
 const TodoForm=()=>{
     const[Todo,setTodo]=useState("")
+    const[cnt,setCnt]=useState(0)
     const{dispatch}=useContext(TodoContext);
     const HandleSubmit=(e)=>{
      
@@ -17,7 +18,7 @@ const TodoForm=()=>{
         {
             return alert("Its empty bitch")
         }
-        console.log(Todo);
+        
        
 
        
@@ -26,8 +27,9 @@ const TodoForm=()=>{
          
           const Todo1={
             Todo,
-            id:uuidv4
+            id: cnt
           }
+          setCnt(cnt+1)
 
         dispatch({
             type:ADD_TODO,
@@ -49,7 +51,7 @@ const TodoForm=()=>{
                             setTodo(e.target.value)
                         }}/>
                     <InputGroupAddon addonType="append">
-                     <Button >Submit</Button>
+                     <Button color="primary">Submit</Button>
 
                     </InputGroupAddon>
                   

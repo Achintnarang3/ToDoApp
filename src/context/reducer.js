@@ -6,6 +6,8 @@ export default (state,action)=>{
         case ADD_TODO:
             return [...state,action.payload]  // loading the state and adding the payload in state
         default:
-            return state.filter((data)=>{return data.id!==action.payload})     
+            state= state.filter((data)=>{return data.id!==action.payload})
+            console.log(state)
+            return state     
     }
 }

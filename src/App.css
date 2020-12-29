@@ -1,7 +1,12 @@
- 
+ body{
+   background-color:gray;
+ }
+ span{
+   cursor: pointer;
+ }
 
  input{
-   width: 60% !important;
+   width: 50% !important;
  }
  h1{
    text-align: center;
